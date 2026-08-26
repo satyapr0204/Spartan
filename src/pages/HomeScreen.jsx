@@ -196,12 +196,17 @@ const HomeScreen = () => {
                 className="hero"
                 style={{
                     backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url(${
-                        homeData?.hero?.backgroundImage && !homeData.hero.backgroundImage.endsWith('.svg')
+                        homeData?.hero?.backgroundImage && (
+                            homeData.hero.backgroundImage.endsWith('.png') ||
+                            homeData.hero.backgroundImage.endsWith('.jpg') ||
+                            homeData.hero.backgroundImage.endsWith('.jpeg') ||
+                            homeData.hero.backgroundImage.endsWith('.webp')
+                        )
                             ? `${IMAGE_URL}/${homeData.hero.backgroundImage}`
                             : "/images/hero-banner-bg.png"
                     })`,
                     backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center center",
+                    backgroundPosition: "center 65%",
                     backgroundSize: "cover",
                 }}
             >
@@ -912,10 +917,16 @@ const HomeScreen = () => {
                         <div
                             className="industry-image-box"
                             style={{
-                                backgroundImage: `url(${item?.image
+                                backgroundImage: `url(${
+                                    item?.image && (
+                                        item.image.endsWith('.png') ||
+                                        item.image.endsWith('.jpg') ||
+                                        item.image.endsWith('.jpeg') ||
+                                        item.image.endsWith('.webp')
+                                    )
                                         ? `${IMAGE_URL}/${item?.image}`
                                         : fallbackImages[index] || fallbackImages[0]
-                                    })`,
+                                })`,
                             }}
                             key={index}
                         >
