@@ -206,7 +206,7 @@ const HomeScreen = () => {
                             : "/images/hero-banner-bg.png"
                     })`,
                     backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center 65%",
+                    backgroundPosition: "center top",
                     backgroundSize: "cover",
                 }}
             >
