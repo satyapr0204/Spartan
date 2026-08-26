@@ -196,12 +196,7 @@ const HomeScreen = () => {
                 className="hero"
                 style={{
                     backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url(${
-                        homeData?.hero?.backgroundImage && (
-                            homeData.hero.backgroundImage.endsWith('.png') ||
-                            homeData.hero.backgroundImage.endsWith('.jpg') ||
-                            homeData.hero.backgroundImage.endsWith('.jpeg') ||
-                            homeData.hero.backgroundImage.endsWith('.webp')
-                        )
+                        homeData?.hero?.backgroundImage
                             ? `${IMAGE_URL}/${homeData.hero.backgroundImage}`
                             : "/images/hero-banner-bg.png"
                     })`,
