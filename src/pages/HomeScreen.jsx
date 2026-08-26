@@ -71,9 +71,9 @@ const HomeScreen = () => {
     ];
 
     const fallbackImages = [
-        "/images/built-1.svg",
-        "/images/built-2.svg",
-        "/images/built-3.svg",
+        "/images/built-1.png",
+        "/images/built-2.png",
+        "/images/built-3.png",
     ];
 
     // if (loading) {
@@ -195,10 +195,11 @@ const HomeScreen = () => {
             <section
                 className="hero"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url(${homeData?.hero?.backgroundImage
+                    backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url(${
+                        homeData?.hero?.backgroundImage && !homeData.hero.backgroundImage.endsWith('.svg')
                             ? `${IMAGE_URL}/${homeData.hero.backgroundImage}`
-                            : "/images/hero-banner-bg.svg"
-                        })`,
+                            : "/images/hero-banner-bg.png"
+                    })`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center center",
                     backgroundSize: "cover",
