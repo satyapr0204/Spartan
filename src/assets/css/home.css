@@ -684,7 +684,7 @@ span.dot-black {
 }
 
 .solution-pill {
-        color: fff;
+    color: #ffffff;
     background-color: #211F1B;
     font-size: 12px;
     font-weight: 500;
@@ -876,7 +876,7 @@ background-color: #2F2F2F4D;
     margin: 0 auto;
     
     /* Yahan apni main single building wali image ka path dalin */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/cybersecurity.svg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/cybersecurity.svg'); 
     background-size: cover;
     background-position: center;
     background-attachment: relative;

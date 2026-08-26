@@ -278,7 +278,7 @@ const HomeScreen = () => {
                 </p>
 
                 <div className="levels-grid">
-                    <div className="level-card fade-in">
+                    <div className="level-card fade-in visible">
                         <span className="level-badge">LEVEL 1</span>
                         <h3>Foundational</h3>
                         <p>
@@ -286,7 +286,7 @@ const HomeScreen = () => {
                             Contract Information (FCI).
                         </p>
                     </div>
-                    <div className="level-card fade-in">
+                    <div className="level-card fade-in visible">
                         <span className="level-badge">LEVEL 2</span>
                         <h3>Advanced</h3>
                         <p>
@@ -294,7 +294,7 @@ const HomeScreen = () => {
                             handling Controlled Unclassified Information (CUI).
                         </p>
                     </div>
-                    <div className="level-card fade-in">
+                    <div className="level-card fade-in visible">
                         <span className="level-badge">LEVEL 3</span>
                         <h3>Expert</h3>
                         <p>
@@ -326,37 +326,37 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="problems-grid">
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/document-img-h.svg" alt="Documentation without execution" />
                         </div>
                         <div className="prob-text">Documentation without execution</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/weak-cloud.svg" alt="Weak cloud security" />
                         </div>
                         <div className="prob-text">Weak cloud security</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/governance-gaps.svg" alt="Governance gaps" />
                         </div>
                         <div className="prob-text">Governance gaps</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/poor-enforcement.svg" alt="Poor policy enforcement" />
                         </div>
                         <div className="prob-text">Poor policy enforcement</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src={icon1} alt="Missing evidence" />
                         </div>
                         <div className="prob-text">Missing evidence</div>
                     </div>
-                    <div className="problem-item fade-in">
+                    <div className="problem-item fade-in visible">
                         <div className="prob-icon">
                             <img src="images/audit-exposure.svg" alt="Audit failure exposure" />
                         </div>
@@ -474,7 +474,7 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="services-cards-grid">
-                    <div className="service-image-card fade-in">
+                    <div className="service-image-card fade-in visible">
                         <span className="card-number">01</span>
                         <h3>CMMC 2.0 Readiness</h3>
                         <p>
@@ -482,7 +482,7 @@ const HomeScreen = () => {
                             aligned to CMMC 2.0 institutional requirements.
                         </p>
                     </div>
-                    <div className="service-image-card fade-in">
+                    <div className="service-image-card fade-in visible">
                         <span className="card-number">02</span>
                         <h3>NIST SP 800-171 Compliance</h3>
                         <p>
@@ -490,7 +490,7 @@ const HomeScreen = () => {
                             readiness built around NIST SP 800-171 standards.
                         </p>
                     </div>
-                    <div className="service-image-card fade-in">
+                    <div className="service-image-card fade-in visible">
                         <span className="card-number">03</span>
                         <h3>Audit Readiness & Evidence Preparation</h3>
                         <p>
@@ -519,7 +519,7 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="pillars-grid-row">
-                    <div className="pillar-column-card fade-in">
+                    <div className="pillar-column-card fade-in visible">
                         <div className="pillar-card-head">
                             <div className="pillar-icon-red">
                                 <img src={icon3} alt="" />
@@ -549,7 +549,7 @@ const HomeScreen = () => {
                         </ul>
                     </div>
 
-                    <div className="pillar-column-card fade-in">
+                    <div className="pillar-column-card fade-in visible">
                         <div className="pillar-card-head">
                             <div className="pillar-icon-red">
                                 <img src={icon2} alt="" />
@@ -578,7 +578,7 @@ const HomeScreen = () => {
                         </ul>
                     </div>
 
-                    <div className="pillar-column-card fade-in">
+                    <div className="pillar-column-card fade-in visible">
                         <div className="pillar-card-head">
                             <div className="pillar-icon-red">
                                 <img src={icon4} alt="" />
@@ -623,7 +623,7 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="trust-boxes-grid">
-                    <div className="trust-box-card fade-in">
+                    <div className="trust-box-card fade-in visible">
                         <div className="trust-box-icon">
                             <img src={icon5} alt="" />
                         </div>
@@ -633,7 +633,7 @@ const HomeScreen = () => {
                             executive security leadership.
                         </p>
                     </div>
-                    <div className="trust-box-card fade-in">
+                    <div className="trust-box-card fade-in visible">
                         <div className="trust-box-icon">
                             <img src={icon6} alt="" />
                         </div>
@@ -643,7 +643,7 @@ const HomeScreen = () => {
                             withstands federal audits.
                         </p>
                     </div>
-                    <div className="trust-box-card fade-in">
+                    <div className="trust-box-card fade-in visible">
                         <div className="trust-box-icon">
                             <img src={icon7} alt="" />
                         </div>
@@ -653,7 +653,7 @@ const HomeScreen = () => {
                             compliance systems.
                         </p>
                     </div>
-                    <div className="trust-box-card fade-in">
+                    <div className="trust-box-card fade-in visible">
                         <div className="trust-box-icon">
                             <img src={icon8} alt="" />
                         </div>
@@ -733,7 +733,7 @@ const HomeScreen = () => {
                 </div>
 
                 <div className="focus-grid">
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon17} alt="" />
                         </div>
@@ -745,7 +745,7 @@ const HomeScreen = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon16} alt="" />
                         </div>
@@ -757,7 +757,7 @@ const HomeScreen = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon9} alt="" />
                         </div>
@@ -771,7 +771,7 @@ const HomeScreen = () => {
 
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon10} alt="" />
                         </div>
@@ -783,7 +783,7 @@ const HomeScreen = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon15} alt="" />
                         </div>
@@ -795,7 +795,7 @@ const HomeScreen = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="focus-card fade-in new-up">
+                    <div className="focus-card fade-in visible new-up">
                         <div className="focus-icon trust-box-icon">
                             <img src={icon11} alt="" />
                         </div>
