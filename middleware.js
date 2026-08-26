@@ -103,6 +103,8 @@ export default async function middleware(request) {
 
       const data = await response.json();
       console.log("BLOG API RESPONSE:", JSON.stringify(data, null, 2));
+      console.log("BLOG API RESPONSE 1:", data);
+      console.log("BLOG API RESPONSE 2:", data?.data?.title);
 
       return {
         title: data?.data?.title,
