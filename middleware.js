@@ -102,7 +102,7 @@ export default async function middleware(request) {
       }
 
       const data = await response.json();
-      //   console.log("BLOG API RESPONSE:", JSON.stringify(data, null, 2));
+      console.log("BLOG API RESPONSE:", JSON.stringify(data, null, 2));
 
       return {
         title: data?.data?.title,
@@ -127,7 +127,7 @@ export default async function middleware(request) {
       }
 
       const data = await response.json();
-      //   console.log("RESOURCE API RESPONSE:", JSON.stringify(data, null, 2));
+      console.log("RESOURCE API RESPONSE:", JSON.stringify(data, null, 2));
 
       return {
         title: data?.data?.heroSection.mainTitle,
@@ -148,15 +148,15 @@ export default async function middleware(request) {
     }
 
     // Blog dynamic page
-    if (pathname.startsWith("/blogs/")) {
-      const slug = pathname.replace("/blogs/", "");
+    if (pathname.startsWith("/blog/")) {
+      const slug = pathname.replace("/blog/", "");
 
       return await getBlogMeta(slug);
     }
 
     // Resource dynamic page
-    if (pathname.startsWith("/resources/")) {
-      const slug = pathname.replace("/resources/", "");
+    if (pathname.startsWith("/resource/")) {
+      const slug = pathname.replace("/resource/", "");
 
       return await getResourceMeta(slug);
     }
