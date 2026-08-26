@@ -205,14 +205,12 @@ const HomeScreen = () => {
                 }}
             >
                 <div className="hero-overlay"></div>
-                <div className="hero-content fade-in">
-                    {!loading && (
-                        <div className="badge-tag">
-                            <span className="dot-black"></span> {homeData?.hero?.badgeTag}
-                        </div>
-                    )}
-                    <h1>{homeData?.hero?.title}</h1>
-                    <p className="hero-subtext">{homeData?.hero?.subtext}</p>
+                <div className="hero-content fade-in visible">
+                    <div className="badge-tag">
+                        <span className="dot-black"></span> {homeData?.hero?.badgeTag || "Executive Advisory & Compliance"}
+                    </div>
+                    <h1>{homeData?.hero?.title || "CMMC 2.0 & NIST Compliance Consulting for Federal Contractors"}</h1>
+                    <p className="hero-subtext">{homeData?.hero?.subtext || "Helping defense contractors achieve CMMC 2.0 and NIST 800-171 certification with audit-ready, evidence-driven security programs."}</p>
 
                     <div className="hero-btns">
                         <Link to="/contact-us" className="btn-white">
@@ -373,15 +371,23 @@ const HomeScreen = () => {
                         {" "}
                         <span className="dot-red"></span> TIME-SENSITIVE
                     </span>
-                    <h2>{homeData?.timeSection?.title}</h2>
-                    <p>{homeData?.timeSection?.subtitle}</p>
+                    <h2>{homeData?.timeSection?.title || "CMMC 2.0 Enforcement is Active"}</h2>
+                    <p>{homeData?.timeSection?.subtitle || "Rulemaking is finalized. DoD contracting officers are inserting CMMC requirements into active solicitations."}</p>
                     <Link to="/compliance-systems" className="btn-red-action">
                         Get Compliance Ready Now <i className="fas fa-arrow-right"></i>
                     </Link>
                 </div>
 
                 <div className="risk-right-grid">
-                    {safeArray(homeData?.timeSection?.content).map((item, index) => (
+                    {(homeData?.timeSection?.content && homeData.timeSection.content.length > 0
+                        ? homeData.timeSection.content
+                        : [
+                            { title: "01", description: "DoD Solicitations Requiring CMMC 2.0 Clauses" },
+                            { title: "02", description: "Mandatory NIST SP 800-171 SPRS Score Submission" },
+                            { title: "03", description: "C3PAO Assessment Backlog & Lead Time Demands" },
+                            { title: "04", description: "Prime Contractor Supply Chain Flow-Down Mandates" }
+                          ]
+                    ).map((item, index) => (
                         <div className="risk-card" key={index}>
                             <span className="risk-num">{item?.title}</span>
                             <h4>{item?.description}</h4>
@@ -393,10 +399,17 @@ const HomeScreen = () => {
             <section className="stats-banner">
                 <div className="stats-banner-overlay"></div>
                 <div className="stats-banner-content">
-                    <h3>{homeData?.statsBanner?.heading}</h3>
+                    <h3>{homeData?.statsBanner?.heading || "Built for Defense Supply Chain Contractors Pursuing CMMC 2.0 Compliance"}</h3>
 
                     <div className="stats-counter-row">
-                        {safeArray(homeData?.statsBanner?.stats).map((item, index) => (
+                        {(homeData?.statsBanner?.stats && homeData.statsBanner.stats.length > 0
+                            ? homeData.statsBanner.stats
+                            : [
+                                { value: "110+", label: "NIST SP 800-171 Security Controls Managed" },
+                                { value: "100%", label: "Focus on CMMC 2.0 Audit Readiness" },
+                                { value: "20+", label: "Years of Executive Security Leadership" }
+                              ]
+                        ).map((item, index) => (
                             <div className="stat-box" key={index}>
                                 <h2>{item?.value}</h2>
                                 <p>{item?.label}</p>
@@ -412,14 +425,22 @@ const HomeScreen = () => {
                         {" "}
                         <span className="dot-white"></span> THE SOLUTION
                     </span>
-                    <h2>{homeData?.solution?.title}</h2>
+                    <h2>{homeData?.solution?.title || "Governance-First Compliance Systems Built for Audit Readiness"}</h2>
                 </div>
 
                 <div className="solution-cards-grid">
-                    {safeArray(homeData?.solution?.cards).map((item, index) => (
+                    {(homeData?.solution?.cards && homeData.solution.cards.length > 0
+                        ? homeData.solution.cards
+                        : [
+                            { title: "Gap Analysis & Readiness", description: "Comprehensive NIST SP 800-171 gap assessments and actionable roadmaps." },
+                            { title: "M365 GCC High Hardening", description: "Secure cloud configuration, access controls, and data governance." },
+                            { title: "SSP & POAM Development", description: "Audit-ready System Security Plans and Plan of Action & Milestones." },
+                            { title: "C3PAO Assessment Prep", description: "End-to-end evidence collection and assessment rehearsal." }
+                          ]
+                    ).map((item, index) => (
                         <div className="sol-card" key={index}>
                             <div className="sol-card-icon">
-                                <img src={solutionIcons[index]} alt={item.title} />
+                                <img src={solutionIcons[index] || solutionIcons[0]} alt={item.title} />
                             </div>
                             <h3>{item?.title}</h3>
                             <p>{item?.description}</p>
