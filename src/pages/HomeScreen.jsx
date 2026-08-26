@@ -671,10 +671,17 @@ const HomeScreen = () => {
                     <span className="section-tag-red no-mar">
                         <span className="dot-red"></span> WHO WE ARE
                     </span>
-                    <h2>{homeData?.whoWeAre?.title}</h2>
+                    <h2>{homeData?.whoWeAre?.title || "Military Leadership Meets Operational Cybersecurity"}</h2>
 
                     <div className="strategic-checklist-box">
-                        {safeArray(homeData?.whoWeAre?.checklist).map((item, index) => (
+                        {(homeData?.whoWeAre?.checklist && homeData.whoWeAre.checklist.length > 0
+                            ? homeData.whoWeAre.checklist
+                            : [
+                                { title: "Executive Military Governance & Command Rigor" },
+                                { title: "Audit-Ready Documentation & Operational Evidence" },
+                                { title: "NIST 800-171 & CMMC 2.0 Deep Subject-Matter Expertise" }
+                              ]
+                        ).map((item, index) => (
                             <div className="checklist-row" key={index}>
                                 <span className="chk-icon">
                                     <img src="images/check-icon-militry.svg" alt="" />
@@ -688,28 +695,28 @@ const HomeScreen = () => {
                 <div className="who-right-col">
                     <div className="built-text">
                         <p className="who-top-intro-text">
-                            {homeData?.whoWeAre?.topIntroText}
+                            {homeData?.whoWeAre?.topIntroText || "Founded by Brigadier General (Ret.) Raphael Warren, Spartan Cyber Security brings executive military leadership and operational rigor to federal compliance."}
                         </p>
                     </div>
 
                     <div className="founder-card-container">
                         <div className="founder-main-img">
                             <img
-                                src={homeData?.whoWeAre?.founderCard?.image}
-                                alt={homeData?.whoWeAre?.founderCard?.name}
+                                src={homeData?.whoWeAre?.founderCard?.image || "/images/leaderImg1.png"}
+                                alt={homeData?.whoWeAre?.founderCard?.name || "Raphael Warren"}
                             />
                         </div>
 
                         <div className="founder-quote-content">
                             <p className="quote-paragraph">
-                                “{homeData?.whoWeAre?.founderCard?.quote}”
+                                “{homeData?.whoWeAre?.founderCard?.quote || "Compliance is not a paperwork exercise; it is an operational security posture designed to protect contracts and defend the supply chain."}”
                             </p>
                             <div className="founder-meta">
                                 <span className="meta-name">
-                                    {homeData?.whoWeAre?.founderCard?.name}
+                                    {homeData?.whoWeAre?.founderCard?.name || "Raphael Warren"}
                                 </span>
                                 <span className="meta-title">
-                                    {homeData?.whoWeAre?.founderCard?.title}
+                                    {homeData?.whoWeAre?.founderCard?.title || "Founder & CEO, Brigadier General (Ret.)"}
                                 </span>
                             </div>
                         </div>
@@ -886,20 +893,27 @@ const HomeScreen = () => {
                     <span className="section-tag-red">
                         <span className="dot-red"></span>INDUSTRIES
                     </span>
-                    <h2>{homeData?.industries?.title}</h2>
+                    <h2>{homeData?.industries?.title || "CMMC 2.0 Compliance by Industry"}</h2>
                     <p className="industries-top-desc">
-                        {homeData?.industries?.description}
+                        {homeData?.industries?.description || "Sector-specific compliance guidance tailored for defense contractors, manufacturing, aerospace, and technology vendors."}
                     </p>
                 </div>
 
                 <div className="industry-cards-row">
-                    {safeArray(homeData?.industries?.cards)?.map((item, index) => (
+                    {(homeData?.industries?.cards && homeData.industries.cards.length > 0
+                        ? homeData.industries.cards
+                        : [
+                            { title: "Defense & Aerospace", description: "Comprehensive CMMC readiness for primes and subcontractors." },
+                            { title: "Manufacturing & Engineering", description: "Securing shop-floor CUI and supply chain communications." },
+                            { title: "Technology & IT Services", description: "GCC High cloud configurations and access control frameworks." }
+                          ]
+                    ).map((item, index) => (
                         <div
                             className="industry-image-box"
                             style={{
                                 backgroundImage: `url(${item?.image
                                         ? `${IMAGE_URL}/${item?.image}`
-                                        : fallbackImages[index]
+                                        : fallbackImages[index] || fallbackImages[0]
                                     })`,
                             }}
                             key={index}
@@ -915,21 +929,15 @@ const HomeScreen = () => {
             <section className="resources-section conpad">
                 <div className="text-center section-header-margin">
                     <span className="badge-red-pill">
-                        <span className="dot-red"></span>RESOURCES12
+                        <span className="dot-red"></span>RESOURCES
                     </span>
-                    <h2>{homeData?.resources?.title}</h2>
+                    <h2>{homeData?.resources?.title || "CMMC 2.0 Compliance Resources"}</h2>
                     <p className="resources-subtext">
-                        {homeData?.resources?.description}
+                        {homeData?.resources?.description || "Actionable policy guides, audit readiness playbooks, and governance frameworks for defense contractors."}
                     </p>
                 </div>
 
                 <BlogHorizontalScroll items={safeArray(homeData?.resources?.cards)} />
-
-                {/* <div className="text-center" style={{ marginTop: "40px" }}>
-          <Link to="/resources" className="btn-red-action">
-            Browse all Resources <i className="fas fa-arrow-right"></i>
-          </Link>
-        </div> */}
             </section>
 
             <section className="faq-section">
