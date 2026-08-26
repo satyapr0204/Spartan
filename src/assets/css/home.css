@@ -376,7 +376,10 @@ span.dot-black {
 
 
     /* Hero section adjustments */
-    .hero { min-height: 65vh; }
+    .hero { 
+        min-height: 65vh; 
+        background-position: center center !important;
+    }
     .hero h1 { font-size: 28px; }
     .hero-btns { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
     .btn-white, .btn-transparent { width: 100%; justify-content: center; }
