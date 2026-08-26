@@ -71,9 +71,9 @@ const HomeScreen = () => {
     ];
 
     const fallbackImages = [
-        "/images/built-1.webp",
-        "/images/built-2.webp",
-        "/images/built-3.webp",
+        "/images/built-1.png",
+        "/images/built-2.png",
+        "/images/built-3.png",
     ];
 
     // if (loading) {
@@ -203,8 +203,11 @@ const HomeScreen = () => {
                             homeData.hero.backgroundImage.endsWith('.webp')
                         )
                             ? `${IMAGE_URL}/${homeData.hero.backgroundImage}`
-                            : "/images/hero-banner-bg.webp"
+                            : "/images/hero-banner-bg.png"
                     })`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center 65%",
+                    backgroundSize: "cover",
                 }}
             >
                 <div className="hero-overlay"></div>
