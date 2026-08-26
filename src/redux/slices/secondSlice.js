@@ -195,7 +195,7 @@ const homeSlice = createSlice({
         // state.industryData = [];
         state.error = action.payload?.message;
         console.log("action", action)
-        if (action?.payload?.message == "Blog not found") {
+        if (action && action.payload && action.payload.message === "Blog not found") {
           toast.error("Page not found")
           setTimeout(() => {
             window.location.replace('/');
@@ -212,7 +212,7 @@ const homeSlice = createSlice({
         state.error = null;
         state.footerData = action.payload?.data;
       })
-      .addCase(globalFooter.rejected, (state, action) => {
+      .addCase(globalFooter.rejected, (state) => {
         state.loading = false;
         // state.error = action.payload?.message;
       })
