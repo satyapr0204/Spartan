@@ -195,11 +195,10 @@ const HomeScreen = () => {
             <section
                 className="hero"
                 style={{
-                    backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url(${
-                        homeData?.hero?.backgroundImage
-                            ? `${IMAGE_URL}/${homeData.hero.backgroundImage}`
-                            : "/images/hero-banner-bg.png"
-                    })`,
+                    backgroundImage: `linear-gradient(rgba(10, 15, 30, 0.5), rgba(5, 10, 20, 0.6)), url(${homeData?.hero?.backgroundImage
+                        ? `${IMAGE_URL}/${homeData.hero.backgroundImage}`
+                        : "/images/hero-banner-bg.png"
+                        })`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center top",
                     backgroundSize: "cover",
@@ -387,7 +386,7 @@ const HomeScreen = () => {
                             { title: "02", description: "Mandatory NIST SP 800-171 SPRS Score Submission" },
                             { title: "03", description: "C3PAO Assessment Backlog & Lead Time Demands" },
                             { title: "04", description: "Prime Contractor Supply Chain Flow-Down Mandates" }
-                          ]
+                        ]
                     ).map((item, index) => (
                         <div className="risk-card" key={index}>
                             <span className="risk-num">{item?.title}</span>
@@ -409,7 +408,7 @@ const HomeScreen = () => {
                                 { value: "110+", label: "NIST SP 800-171 Security Controls Managed" },
                                 { value: "100%", label: "Focus on CMMC 2.0 Audit Readiness" },
                                 { value: "20+", label: "Years of Executive Security Leadership" }
-                              ]
+                            ]
                         ).map((item, index) => (
                             <div className="stat-box" key={index}>
                                 <h2>{item?.value}</h2>
@@ -437,7 +436,7 @@ const HomeScreen = () => {
                             { title: "M365 GCC High Hardening", description: "Secure cloud configuration, access controls, and data governance." },
                             { title: "SSP & POAM Development", description: "Audit-ready System Security Plans and Plan of Action & Milestones." },
                             { title: "C3PAO Assessment Prep", description: "End-to-end evidence collection and assessment rehearsal." }
-                          ]
+                        ]
                     ).map((item, index) => (
                         <div className="sol-card" key={index}>
                             <div className="sol-card-icon">
@@ -681,7 +680,7 @@ const HomeScreen = () => {
                                 { title: "Executive Military Governance & Command Rigor" },
                                 { title: "Audit-Ready Documentation & Operational Evidence" },
                                 { title: "NIST 800-171 & CMMC 2.0 Deep Subject-Matter Expertise" }
-                              ]
+                            ]
                         ).map((item, index) => (
                             <div className="checklist-row" key={index}>
                                 <span className="chk-icon">
@@ -907,21 +906,20 @@ const HomeScreen = () => {
                             { title: "Defense & Aerospace", description: "Comprehensive CMMC readiness for primes and subcontractors." },
                             { title: "Manufacturing & Engineering", description: "Securing shop-floor CUI and supply chain communications." },
                             { title: "Technology & IT Services", description: "GCC High cloud configurations and access control frameworks." }
-                          ]
+                        ]
                     ).map((item, index) => (
                         <div
                             className="industry-image-box"
                             style={{
-                                backgroundImage: `url(${
-                                    item?.image && (
-                                        item.image.endsWith('.png') ||
-                                        item.image.endsWith('.jpg') ||
-                                        item.image.endsWith('.jpeg') ||
-                                        item.image.endsWith('.webp')
-                                    )
-                                        ? `${IMAGE_URL}/${item?.image}`
-                                        : fallbackImages[index] || fallbackImages[0]
-                                })`,
+                                backgroundImage: `url(${item?.image && (
+                                    item.image.endsWith('.png') ||
+                                    item.image.endsWith('.jpg') ||
+                                    item.image.endsWith('.jpeg') ||
+                                    item.image.endsWith('.webp')
+                                )
+                                    ? `${IMAGE_URL}/${item?.image}`
+                                    : fallbackImages[index] || fallbackImages[0]
+                                    })`,
                             }}
                             key={index}
                         >
